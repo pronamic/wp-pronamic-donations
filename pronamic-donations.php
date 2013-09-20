@@ -15,8 +15,10 @@ define( 'PRONAMIC_DONATIONS_PATH', plugin_dir_path( __FILE__ ) );
 /**
  * Global includes
  */
-require PRONAMIC_DONATIONS_PATH . 'includes/options.php';
-require PRONAMIC_DONATIONS_PATH . 'includes/meta-boxes.php';
+if ( is_admin() ) {
+	require PRONAMIC_DONATIONS_PATH . 'includes/options.php';
+	require PRONAMIC_DONATIONS_PATH . 'includes/meta-boxes.php';
+}
 
 /**
  * Widget includes
