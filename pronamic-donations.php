@@ -90,10 +90,11 @@ if ( get_option( 'pronamic_donations_gravity_form_id' ) ) {
 /**
  * Template functions
  */
- function pronamic_donations_get_total_raised() {
+function pronamic_donations_get_total_raised() {
 	return get_option( 'pronamic_donations_total_raised' );
- }
+}
  
 function pronamic_donations_get_total_number() {
 	return get_option( 'pronamic_donations_total_number' );
- }
+}
+ 
