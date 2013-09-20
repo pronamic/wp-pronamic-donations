@@ -55,9 +55,7 @@ if ( get_option( 'pronamic_donations_gravity_form_id' ) ) {
 		if ( isset( $pid ) ) {
 			$donate_id = $pid;
 		} else {
-			$post = get_post( $entry['post_id'] );
-
-			$donate_id = $post->ID;
+			$donate_id = $entry['post_id'];
 		}
 
 		$total = 0;
