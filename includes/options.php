@@ -142,14 +142,33 @@ function pronamic_donations_settings_page_render() {
 							</p>
 						</td>
 					</tr>
-					<tr valign="top">
-						<th scope="row">
-							<label for="pronamic_donations_gravity_form_id"><?php _e( 'Gravity Forms Form ID', 'pronamic_donations' ); ?></label>
-						</th>
-						<td>
-							<input id="pronamic_donations_gravity_form_id" name="pronamic_donations_gravity_form_id" type="text" value="<?php echo get_option( 'pronamic_donations_gravity_form_id' ); ?>" class="regular-text" />
-						</td>
-					</tr>
+
+					<?php 
+
+					if ( class_exists( 'RGFormsModel' ) ) :
+						$forms = RGFormsModel::get_forms();
+
+					?>
+						<tr valign="top">
+							<th scope="row">
+								<label for="pronamic_donations_gravity_form_id"><?php _e( 'Gravity Forms Form', 'pronamic_donations' ); ?></label>
+							</th>
+							<td>
+								<select name="pronamic_donations_gravity_form_id" id="pronamic_donations_gravity_form_id">
+									<option value=""><?php _e( '&mdash; Select a form &mdash;', 'pronamic_donations' ); ?></option>
+		
+									<?php foreach ( $forms as $form ) : ?>
+		
+										<option value="<?php echo $form->id; ?>" <?php selected( get_option( 'pronamic_donations_gravity_form_id' ), $form->id ); ?>>
+											<?php echo $form->title; ?>
+										</option>
+										
+									<?php endforeach; ?>
+								</select>
+							</td>
+						</tr>
+					
+					<?php endif; ?>
 				</table>
 			
 			<?php endif; ?>
