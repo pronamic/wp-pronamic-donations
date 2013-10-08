@@ -38,6 +38,12 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 					<span class="value"><?php echo get_post_meta( $post->ID, '_pronamic_donations_number', true ); ?></span> <span class="label"><?php _e( 'donations', 'pronamic_donations' ); ?></span>
 				</div>
 			
+			<?php else : ?>
+
+				<p>
+					<?php _e( 'There are no donations yet. Be the first!', 'pronamic_donations' ); ?>
+				</p>
+
 			<?php endif; ?>
 			
 			<?php if ( ! empty( $show_funding_goal ) && get_post_meta( $post->ID, '_pronamic_donations_funding_goal', true ) ) : ?>

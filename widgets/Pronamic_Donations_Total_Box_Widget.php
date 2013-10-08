@@ -36,6 +36,12 @@ class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
 					<span class="value"><?php echo get_option( 'pronamic_donations_total_number' ); ?></span> <span class="label"><?php _e( 'donations', 'pronamic_donations' ); ?></span>
 				</div>
 			
+			<?php else : ?>
+
+				<p>
+					<?php _e( 'There are no donations yet. Be the first!', 'pronamic_donations' ); ?>
+				</p>
+			
 			<?php endif; ?>
 			
 			<?php if ( ! empty( $show_total_funding_goal ) ) : ?>
