@@ -44,7 +44,7 @@ function pronamic_donations_settings_page_render() {
 		<?php $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'funding_options'; ?>  
 		  
 		<h2 class="nav-tab-wrapper">  
-		    <a href="?page=pronamic_donations_settings&tab=funding_options" class="nav-tab <?php echo $active_tab == 'funding_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Funding', 'pronamic_donations' ); ?></a>  
+		    <a href="?page=pronamic_donations_settings&tab=funding_options" class="nav-tab <?php echo $active_tab == 'funding_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Fundings', 'pronamic_donations' ); ?></a>  
 		    <a href="?page=pronamic_donations_settings&tab=settings_options" class="nav-tab <?php echo $active_tab == 'settings_options' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Settings', 'pronamic_donations' ); ?></a>  
 		</h2> 
 
@@ -72,6 +72,10 @@ function pronamic_donations_settings_page_render() {
 						</th>
 						<td>
 							<input id="pronamic_donations_total_raised" name="pronamic_donations_total_raised" type="text" value="<?php echo get_option( 'pronamic_donations_total_raised' ); ?>" class="regular-text" />
+
+							<p class="description">
+								<?php _e( 'This field is automatically updated.', 'pronamic_donations' ); ?>
+							</p>
 						</td>
 					</tr>
 					<tr valign="top">
@@ -80,6 +84,10 @@ function pronamic_donations_settings_page_render() {
 						</th>
 						<td>
 							<input id="pronamic_donations_total_number" name="pronamic_donations_total_number" type="text" value="<?php echo get_option( 'pronamic_donations_total_number' ); ?>" class="regular-text" />
+
+							<p class="description">
+								<?php _e( 'This field is automatically updated.', 'pronamic_donations' ); ?>
+							</p>
 						</td>
 					</tr>
 				</table>
@@ -95,8 +103,10 @@ function pronamic_donations_settings_page_render() {
 				<?php
 
 				$post_types = get_post_types( array(
-					'public' => true
-				) ); 
+						'public' => true
+					),
+					'objects' 
+				); 
 
 				?>
 
@@ -106,10 +116,16 @@ function pronamic_donations_settings_page_render() {
 							<label for="pronamic_donations_post_types"><?php _e( 'Post types', 'pronamic_donations' ); ?></label>
 						</th>
 						<td>
-							<?php foreach ( $post_types as $post_type ) : ?>
+							<?php
+							
+							$active = get_option( 'pronamic_donations_post_types' );
+							
+							$active = is_array( $active ) ? $active : array();
+	
+							foreach ( $post_types as $key => $post_type ) : ?>
 					
 								<div>
-									<input name="pronamic_donations_post_types[]" type="checkbox" value="<?php echo $post_type; ?>" <?php if ( in_array( $post_type, get_option( 'pronamic_donations_post_types' ) ) ) { echo 'checked'; }; ?>  /> <?php echo $post_type; ?>
+									<input name="pronamic_donations_post_types[]" type="checkbox" value="<?php echo $key; ?>" <?php checked( in_array( $key, $active ) ); ?>  /> <?php echo $post_type->label; ?>
 								</div>
 							
 							<?php endforeach; ?>
@@ -118,7 +134,7 @@ function pronamic_donations_settings_page_render() {
 				</table>
 			
 				<h3>
-					<?php _e( 'Gravity Form', 'pronamic_donations' ); ?>
+					<?php _e( 'Gravity Forms', 'pronamic_donations' ); ?>
 				</h3>
 	
 				<table class="form-table">
@@ -148,7 +164,8 @@ function pronamic_donations_settings_page_render() {
 					if ( class_exists( 'RGFormsModel' ) ) :
 						$forms = RGFormsModel::get_forms();
 
-					?>
+						?>
+
 						<tr valign="top">
 							<th scope="row">
 								<label for="pronamic_donations_gravity_form_id"><?php _e( 'Gravity Forms Form', 'pronamic_donations' ); ?></label>

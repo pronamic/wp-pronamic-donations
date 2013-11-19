@@ -27,12 +27,22 @@ require PRONAMIC_DONATIONS_PATH . 'widgets/Pronamic_Donations_Total_Box_Widget.p
 require PRONAMIC_DONATIONS_PATH . 'widgets/Pronamic_Donations_Post_Box_Widget.php';
 
 /**
+ * Init
+ */
+function pronamic_donations_init() {
+  	load_plugin_textdomain( 'pronamic_donations', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action( 'plugins_loaded', 'pronamic_donations_init' );
+
+/**
  * Widgets
  */
 function pronamic_donations_wp_widgets() {
 	register_widget( 'Pronamic_Donations_Total_Box_Widget' );
 	register_widget( 'Pronamic_Donations_Post_Box_Widget' );
 }
+
 add_action( 'widgets_init', 'pronamic_donations_wp_widgets', 1 );
 
 /**
@@ -44,6 +54,7 @@ function pronamic_donations_load_scripts() {
 		plugins_url( '/css/pronamic-donations.css' , __FILE__ )
 	);
 }
+
 add_action( 'wp_enqueue_scripts', 'pronamic_donations_load_scripts' );
 
 /**
