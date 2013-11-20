@@ -20,17 +20,20 @@ class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
 		$show_total_percentages =  $instance['show_total_percentages'];
 
 		echo $before_widget;
-		
+
 		if ( ! empty( $title ) ) {
 			echo $before_title . $title . $after_title;
 		}
-		
-		$percentage =  ( get_option( 'pronamic_donations_total_raised' ) * 100 ) / get_option( 'pronamic_donations_total_funding_goal' );
+
+		if ( get_option( 'pronamic_donations_total_raised' ) && get_option( 'pronamic_donations_total_funding_goal' ) ) {
+			$percentage =  ( get_option( 'pronamic_donations_total_raised' ) * 100 ) / get_option( 'pronamic_donations_total_funding_goal' );
+			$percentage = round( $percentage, 2 );
+		}
 
 		?>
-		
+
 		<div class="donations">
-			<?php if ( ! empty( $show_total_number_donations ) ) : ?>
+			<?php if ( ! empty( $show_total_number_donations ) && get_option( 'pronamic_donations_total_number' ) ) : ?>
 	
 				<div class="donate-section">
 					<span class="value"><?php echo get_option( 'pronamic_donations_total_number' ); ?></span> <span class="label"><?php _e( 'donations', 'pronamic_donations' ); ?></span>
@@ -44,7 +47,7 @@ class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
 			
 			<?php endif; ?>
 			
-			<?php if ( ! empty( $show_total_funding_goal ) ) : ?>
+			<?php if ( ! empty( $show_total_funding_goal ) && get_option( 'pronamic_donations_total_funding_goal' ) ) : ?>
 
 				<div class="donate-section">
 					<span class="value"><?php echo '&euro;' . number_format( get_option( 'pronamic_donations_total_funding_goal' ), 2, ',', '.' ); ?></span> <span class="label"><?php _e( 'is our goal', 'pronamic_donations' ); ?></span>
@@ -52,15 +55,15 @@ class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
 			
 			<?php endif; ?>
 
-			<?php if ( ! empty( $show_total_raised ) ) : ?>
+			<?php if ( ! empty( $show_total_raised ) && get_option( 'pronamic_donations_total_raised' ) ) : ?>
 
 				<div class="donate-section">
 					<span class="value"><?php echo '&euro;' . number_format( get_option( 'pronamic_donations_total_raised' ), 2, ',', '.' ); ?></span> <span class="label"><?php _e( 'raised so far', 'pronamic_donations' ); ?></span>
 				</div>
-			
+
 			<?php endif; ?>
 
-			<?php if ( ! empty( $show_total_percentages ) ) : ?>
+			<?php if ( ! empty( $show_total_percentages ) && isset ( $percentage ) ) : ?>
 
 				<div class="donate-section">
 					<span class="value"><?php echo $percentage . '%'; ?></span> <span class="label"><?php _e( 'funded', 'pronamic_donations' ); ?></span>
@@ -97,12 +100,11 @@ class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
 	}
 
 	function form( $instance ) {
-		$title = $instance['title'];
-		$show_total_number_donations = $instance['show_total_number_donations'];
-		$show_total_funding_goal = $instance['show_total_funding_goal'];
-		$show_total_raised = $instance['show_total_raised'];
-		$show_total_percentages = $instance['show_total_percentages'];
-
+		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$show_total_number_donations = isset( $instance['show_total_number_donations'] ) ? esc_attr( $instance['show_total_number_donations'] ) : '';
+		$show_total_funding_goal = isset( $instance['show_total_funding_goal'] ) ? esc_attr( $instance['show_total_funding_goal'] ) : '';
+		$show_total_raised = isset( $instance['show_total_raised'] ) ? esc_attr( $instance['show_total_raised'] ) : '';
+		$show_total_percentages = isset( $instance['show_total_percentages'] ) ? esc_attr( $instance['show_total_percentages'] ) : '';
 
 		?>
 

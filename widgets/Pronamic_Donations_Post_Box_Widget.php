@@ -27,6 +27,7 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 		
 		if ( get_post_meta( $post->ID, '_pronamic_donations_funding_goal', true ) && get_post_meta( $post->ID, '_pronamic_donations_raised', true ) ) {
 			$percentage =  ( get_post_meta( $post->ID, '_pronamic_donations_raised', true ) * 100 ) / get_post_meta( $post->ID, '_pronamic_donations_funding_goal', true );
+			$percentage = round( $percentage, 2 );
 		}
 		
 		?>
@@ -99,13 +100,12 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 	}
 
 	function form( $instance ) {
-		$title = $instance['title'];
-		$show_number_donations = $instance['show_number_donations'];
-		$show_funding_goal = $instance['show_funding_goal'];
-		$show_raised = $instance['show_raised'];
-		$show_percentages = $instance['show_percentages'];
-
-
+		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$show_number_donations = isset( $instance['show_number_donations'] ) ? esc_attr( $instance['show_number_donations'] ) : '';
+		$show_funding_goal = isset( $instance['show_funding_goal'] ) ? esc_attr( $instance['show_funding_goal'] ) : '';
+		$show_raised = isset( $instance['show_raised'] ) ? esc_attr( $instance['show_raised'] ) : '';
+		$show_percentages = isset( $instance['show_percentages'] ) ? esc_attr( $instance['show_percentages'] ) : '';
+	
 		?>
 
 		<p>

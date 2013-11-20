@@ -3,7 +3,7 @@
 Plugin Name: Pronamic Donations
 Plugin URI: http://pronamic.eu/wordpress/donations/
 Description: This plugin add some basic donation functionality to WordPress.
-Version: 1.0.0
+Version: 1.0.1
 Requires at least: 3.5
 Author: Pronamic
 Author URI: http://pronamic.eu/
