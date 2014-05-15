@@ -1,18 +1,18 @@
 <?php
 /*
 Plugin Name: Pronamic Donations
-Plugin URI: http://pronamic.eu/wordpress/donations/
-Description: This plugin add some basic donation functionality to WordPress.
+Plugin URI: https://github.com/pronamic/wp-pronamic-donations/
+Description: This plugin adds some basic donation functionality to WordPress.
 
-Version: 1.0.1
+Version: 1.0.2
 Requires at least: 3.5
 
 Author: Pronamic
 Author URI: http://pronamic.eu/
 
-License: Copyright (c) Pronamic
+License: GPLv3
 
-GitHub URI: https://github.com/pronamic/wp-pronamic-donations
+GitHub URI: https://github.com/pronamic/wp-pronamic-donations/
 */
 
 define( 'PRONAMIC_DONATIONS_PATH', plugin_dir_path( __FILE__ ) );
@@ -69,11 +69,13 @@ if ( get_option( 'pronamic_donations_gravity_form_id' ) ) {
 
 	function update_donation_information( $entry, $form ) {
 		$pid = filter_input( INPUT_GET, 'pid', FILTER_SANITIZE_NUMBER_INT );
-	
+
 		if ( isset( $pid ) ) {
 			$donate_id = $pid;
 		} else {
-			$donate_id = $entry['post_id'];
+			// $donate_id = $entry['post_id'];
+
+			$donate_id = get_the_ID();
 		}
 
 		$total = 0;
@@ -84,8 +86,8 @@ if ( get_option( 'pronamic_donations_gravity_form_id' ) ) {
 			}
 		}
 
-		$raised = get_post_meta( $donate_id, '_pronamic_donations_raised', true );
-		$number = get_post_meta( $donate_id, '_pronamic_donations_number', true );
+		$raised       = get_post_meta( $donate_id, '_pronamic_donations_raised', true );
+		$number       = get_post_meta( $donate_id, '_pronamic_donations_number', true );
 		$total_raised = get_option( 'pronamic_donations_total_raised' );
 		$total_number = get_option( 'pronamic_donations_total_number' );
 		
