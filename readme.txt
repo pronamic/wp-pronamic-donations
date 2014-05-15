@@ -1,13 +1,13 @@
 === Pronamic Donations ===
 Contributors: pronamic, kareljantolsma 
-Tags: pronamic, daonations
+Tags: pronamic, donations, donate, gravity forms
 Requires at least: 3.0
-Tested up to: 3.7.1
-Stable tag: 1.0.1
-License: Copyright (c) Pronamic
-License URI: http://www.pronamic.eu/copyright/
+Tested up to: 3.9.1
+Stable tag: 1.0.2
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Pronamic Donations is a basic plugin to add some donation functionality.
+Pronamic Donations is a basic plugin that adds some donation functionality.
 
 == Description ==
 

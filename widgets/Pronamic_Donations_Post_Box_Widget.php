@@ -13,41 +13,45 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 
 		extract( $args );
 
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
-		$show_number_donations =  $instance['show_number_donations'];
-		$show_funding_goal =  $instance['show_funding_goal'];
-		$show_raised =  $instance['show_raised'];
-		$show_percentages =  $instance['show_percentages'];
+		$title                 = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
+		$show_number_donations = empty( $instance['show_number_donations'] ) ? '' : esc_attr( $instance['show_number_donations'] );
+		$show_funding_goal     = empty( $instance['show_funding_goal'] ) ? '' : esc_attr( $instance['show_funding_goal'] );
+		$show_raised           = empty( $instance['show_raised'] ) ? '' : esc_attr( $instance['show_raised'] );
+		$show_percentages      = empty( $instance['show_percentages'] ) ? '' : esc_attr( $instance['show_percentages'] );
 
 		echo $before_widget;
-		
+
 		if ( ! empty( $title ) ) {
 			echo $before_title . $title . $after_title;
 		}
-		
+
 		if ( get_post_meta( $post->ID, '_pronamic_donations_funding_goal', true ) && get_post_meta( $post->ID, '_pronamic_donations_raised', true ) ) {
-			$percentage =  ( get_post_meta( $post->ID, '_pronamic_donations_raised', true ) * 100 ) / get_post_meta( $post->ID, '_pronamic_donations_funding_goal', true );
+			$percentage = ( get_post_meta( $post->ID, '_pronamic_donations_raised', true ) * 100 ) / get_post_meta( $post->ID, '_pronamic_donations_funding_goal', true );
 			$percentage = round( $percentage, 2 );
 		}
-		
+
 		?>
-		
+
 		<div class="donations">
-			<?php if ( ! empty( $show_number_donations ) && get_post_meta( $post->ID, '_pronamic_donations_number', true ) ) : ?>
+			<?php if ( $show_number_donations ) : ?>
+
+				<?php if ( get_post_meta( $post->ID, '_pronamic_donations_number', true ) ) : ?>
 	
-				<div class="donate-section">
-					<span class="value"><?php echo get_post_meta( $post->ID, '_pronamic_donations_number', true ); ?></span> <span class="label"><?php _e( 'donations', 'pronamic_donations' ); ?></span>
-				</div>
+					<div class="donate-section">
+						<span class="value"><?php echo get_post_meta( $post->ID, '_pronamic_donations_number', true ); ?></span> <span class="label"><?php _e( 'donations', 'pronamic_donations' ); ?></span>
+					</div>
+
+				<?php else : ?>
+
+					<p>
+						<?php _e( 'There are no donations yet. Be the first!', 'pronamic_donations' ); ?>
+					</p>
+
+				<?php endif; ?>
 			
-			<?php else : ?>
-
-				<p>
-					<?php _e( 'There are no donations yet. Be the first!', 'pronamic_donations' ); ?>
-				</p>
-
 			<?php endif; ?>
 			
-			<?php if ( ! empty( $show_funding_goal ) && get_post_meta( $post->ID, '_pronamic_donations_funding_goal', true ) ) : ?>
+			<?php if ( $show_funding_goal && get_post_meta( $post->ID, '_pronamic_donations_funding_goal', true ) ) : ?>
 
 				<div class="donate-section">
 					<span class="value"><?php echo '&euro;' . number_format( get_post_meta( $post->ID, '_pronamic_donations_funding_goal', true ), 2, ',', '.' ); ?></span> <span class="label"><?php _e( 'is our goal', 'pronamic_donations' ); ?></span>
@@ -55,7 +59,7 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 			
 			<?php endif; ?>
 
-			<?php if ( ! empty( $show_raised ) && get_post_meta( $post->ID, '_pronamic_donations_raised', true ) ) : ?>
+			<?php if ( $show_raised && get_post_meta( $post->ID, '_pronamic_donations_raised', true ) ) : ?>
 
 				<div class="donate-section">
 					<span class="value"><?php echo '&euro;' . number_format( get_post_meta( $post->ID, '_pronamic_donations_raised', true ), 2, ',', '.' ); ?></span> <span class="label"><?php _e( 'raised so far', 'pronamic_donations' ); ?></span>
@@ -63,7 +67,7 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 			
 			<?php endif; ?>
 
-			<?php if ( ! empty( $show_percentages ) && isset ( $percentage ) ) : ?>
+			<?php if ( $show_percentages && isset ( $percentage ) ) : ?>
 
 				<div class="donate-section">
 					<span class="value"><?php echo $percentage . '%'; ?></span> <span class="label"><?php _e( 'funded', 'pronamic_donations' ); ?></span>
@@ -90,21 +94,21 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		$instance['title'] =  $new_instance['title'];
-		$instance['show_number_donations'] =  $new_instance['show_number_donations'];
-		$instance['show_funding_goal'] =  $new_instance['show_funding_goal'];
-		$instance['show_raised'] =  $new_instance['show_raised'];
-		$instance['show_percentages'] =  $new_instance['show_percentages'];
+		$instance['title']                 = $new_instance['title'];
+		$instance['show_number_donations'] = $new_instance['show_number_donations'];
+		$instance['show_funding_goal']     = $new_instance['show_funding_goal'];
+		$instance['show_raised']           = $new_instance['show_raised'];
+		$instance['show_percentages']      = $new_instance['show_percentages'];
 
 		return $instance;
 	}
 
 	function form( $instance ) {
-		$title = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$title                 = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$show_number_donations = isset( $instance['show_number_donations'] ) ? esc_attr( $instance['show_number_donations'] ) : '';
-		$show_funding_goal = isset( $instance['show_funding_goal'] ) ? esc_attr( $instance['show_funding_goal'] ) : '';
-		$show_raised = isset( $instance['show_raised'] ) ? esc_attr( $instance['show_raised'] ) : '';
-		$show_percentages = isset( $instance['show_percentages'] ) ? esc_attr( $instance['show_percentages'] ) : '';
+		$show_funding_goal     = isset( $instance['show_funding_goal'] ) ? esc_attr( $instance['show_funding_goal'] ) : '';
+		$show_raised           = isset( $instance['show_raised'] ) ? esc_attr( $instance['show_raised'] ) : '';
+		$show_percentages      = isset( $instance['show_percentages'] ) ? esc_attr( $instance['show_percentages'] ) : '';
 	
 		?>
 
