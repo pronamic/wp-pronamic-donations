@@ -2,8 +2,10 @@
 Contributors: pronamic, kareljantolsma 
 Tags: pronamic, daonations
 Requires at least: 3.0
-Tested up to: 3.5
-Stable tag: 1.3.2
+Tested up to: 3.7.1
+Stable tag: 1.0.1
+License: Copyright (c) Pronamic
+License URI: http://www.pronamic.eu/copyright/
 
 Pronamic Donations is a basic plugin to add some donation functionality.
 
@@ -21,4 +23,8 @@ Upload the Pronamic Donations folder to your wp-content/plugins folder.
 
 == Changelog ==
 
-...
+= 1.0.1 =
+*	Widget optimalisations.
+
+= 1.0.0 =
+*	Init release.

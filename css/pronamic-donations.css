@@ -12,7 +12,11 @@
 }
 
 .donate-section .label {
+	background: none;
+
 	color: #999;
+
+	padding: 0;
 
 	text-transform: uppercase;
 }
