@@ -1,0 +1,42 @@
+.donate-section {
+	margin-bottom: 10px;
+}
+
+.donate-section .value {
+	display: block;
+
+	font-size: 40px;
+	line-height: 1; 
+
+	font-weight: bold;
+}
+
+.donate-section .label {
+	background: none;
+
+	color: #999;
+
+	padding: 0;
+
+	text-transform: uppercase;
+}
+
+.progress {
+	background: #f7f7f7;
+
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+
+	border-radius: 3px;
+
+	height: 10px;
+
+	margin-bottom: 20px;
+
+	overflow: hidden;
+}
+
+.progress .bar {
+	background: #68ce00;
+
+	height: 100%;
+}
