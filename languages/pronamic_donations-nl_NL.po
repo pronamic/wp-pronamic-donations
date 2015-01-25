@@ -2,44 +2,43 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Framework\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-19 14:09+0100\n"
-"PO-Revision-Date: 2013-11-19 14:09+0100\n"
+"POT-Creation-Date: 2015-01-25 11:26+0100\n"
+"PO-Revision-Date: 2015-01-25 11:27+0100\n"
 "Last-Translator: K.Tolsma <kareljan@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
+"Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext:1,2;__withdesc;_ewithdesc;_c;_n_noop:1,2;__ngettext_noop:1,2;_x:2c,1;_nc:1,2;esc_attr_e;esc_html_e;esc_attr__;_nx:4c,1,2;_nx_noop:4c,1,2;esc_html_x:2c,1;esc_html__;_ex:2c,1\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext:1,2;__withdesc;_ewithdesc;_c;"
+"_n_noop:1,2;__ngettext_noop:1,2;_x:2c,1;_nc:1,2;esc_attr_e;esc_html_e;"
+"esc_attr__;_nx:4c,1,2;_nx_noop:4c,1,2;esc_html_x:2c,1;esc_html__;_ex:2c,1\n"
 "X-Poedit-Basepath: ../\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-Country: NETHERLANDS\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.7.3\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: includes/meta-boxes.php:13
 msgid "Donation information"
 msgstr "Donatie informatie"
 
-#: includes/meta-boxes.php:37
+#: includes/meta-boxes.php:38
 msgid "Funding goal"
 msgstr "Donatie doel"
 
-#: includes/meta-boxes.php:47
+#: includes/meta-boxes.php:48
 msgid "Raised"
 msgstr "Opgehaald"
 
-#: includes/meta-boxes.php:57
+#: includes/meta-boxes.php:58
 msgid "Number donations"
 msgstr "Aantal donaties"
 
-#: includes/options.php:9
-#: includes/options.php:10
-#: includes/options.php:41
+#: includes/options.php:9 includes/options.php:10 includes/options.php:41
 msgid "Pronamic Donations"
 msgstr "Pronamic Donations"
 
-#: includes/options.php:47
-#: includes/options.php:57
+#: includes/options.php:47 includes/options.php:57
 msgid "Fundings"
 msgstr "Donaties"
 
@@ -55,8 +54,7 @@ msgstr "Totale donatie doel"
 msgid "Total raised"
 msgstr "Totaal opgehaald"
 
-#: includes/options.php:77
-#: includes/options.php:89
+#: includes/options.php:77 includes/options.php:89
 msgid "This field is automatically updated."
 msgstr "Dit veld wordt automatisch geupdate."
 
@@ -86,7 +84,9 @@ msgstr "&mdash; Selecteer een pagina &mdash;"
 
 #: includes/options.php:157
 msgid "Only use this setting if you want the Gravity Form on another page."
-msgstr "Gebruik deze instelling alleen als je het Gravity Forms formulier op aan andere pagina gebruikt."
+msgstr ""
+"Gebruik deze instelling alleen als je het Gravity Forms formulier op aan "
+"andere pagina gebruikt."
 
 #: includes/options.php:171
 msgid "Gravity Forms Form"
@@ -96,6 +96,40 @@ msgstr "Gravity Forms formulier"
 msgid "&mdash; Select a form &mdash;"
 msgstr "&mdash; Selecteer een formulier &mdash;"
 
+#: includes/options.php:190
+msgid "It looks like Gravity Forms is not active. Please activate it."
+msgstr "Het lijkt erop dat Gravity Forms niet geactiveerd is. Activeer het."
+
+#: includes/shortcodes.php:27
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:42
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:41
+msgid "donations"
+msgstr "donaties"
+
+#: includes/shortcodes.php:35
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:58
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:57
+msgid "is our goal"
+msgstr "is ons doel"
+
+#: includes/shortcodes.php:43
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:66
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:65
+msgid "raised so far"
+msgstr "tot nu toe opgehaald"
+
+#: includes/shortcodes.php:51
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:74
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:73
+msgid "funded"
+msgstr "opgehaald"
+
+#: includes/shortcodes.php:62
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:85
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:84
+msgid "Donate"
+msgstr "Doneer"
+
 #: widgets/Pronamic_Donations_Post_Box_Widget.php:8
 msgid "Donations"
 msgstr "Donaties"
@@ -104,56 +138,47 @@ msgstr "Donaties"
 msgid "Displays a box with specific post donation information."
 msgstr "Toon een blok met specifieke post donatie informatie."
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:38
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:36
-msgid "donations"
-msgstr "donaties"
-
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:44
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:42
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:48
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:47
 msgid "There are no donations yet. Be the first!"
 msgstr "Er zijn nog geen donaties. Wees de eerste!"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:52
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:50
-msgid "is our goal"
-msgstr "is ons doel"
-
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:60
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:58
-msgid "raised so far"
-msgstr "tot nu toe opgehaald"
-
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:68
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:66
-msgid "funded"
-msgstr "opgehaald"
-
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:79
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:77
-msgid "Donate"
-msgstr "Doneer"
-
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:113
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:111
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:124
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:117
 msgid "Title"
 msgstr "Titel"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:123
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:134
 msgid "Show number donations"
 msgstr "Toon aantal donaties"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:131
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:142
 msgid "Show funding goal"
 msgstr "Toon donatie doel"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:139
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:150
 msgid "Show raised"
 msgstr "Toon opgehaald"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:147
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:158
 msgid "Show percentages"
 msgstr "Toon percentages"
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:164
+msgid "Donation form:"
+msgstr "Donatie formulier:"
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:168
+msgid "Show on current page"
+msgstr "Toon op huidige pagina"
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:169
+msgid "Show on another page"
+msgstr "Toon op een andere pagina"
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:170
+msgid "Show in widget"
+msgstr "Toon in widget"
 
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:8
 msgid "Total donations"
@@ -163,34 +188,34 @@ msgstr "Totale donaties"
 msgid "Displays a box with total donation information."
 msgstr "Toont een blok met totale donatie informatie."
 
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:121
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:127
 msgid "Show total number donations"
 msgstr "Toon totale aantal donaties"
 
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:129
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:135
 msgid "Show total funding goal"
 msgstr "Toon totale donatie doel"
 
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:137
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:143
 msgid "Show total raised"
 msgstr "Toon totaal opgehaald"
 
-#: widgets/Pronamic_Donations_Total_Box_Widget.php:145
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:151
 msgid "Show total percentages"
 msgstr "Toon totale percentages"
 
 #~ msgid "Funding"
 #~ msgstr "Donatie"
-#~ msgctxt "post type general name"
 
+#~ msgctxt "post type general name"
 #~ msgid "Blocks"
 #~ msgstr "Blokken"
-#~ msgctxt "post type singular name"
 
+#~ msgctxt "post type singular name"
 #~ msgid "Block"
 #~ msgstr "Blok"
-#~ msgctxt "block"
 
+#~ msgctxt "block"
 #~ msgid "Add New"
 #~ msgstr "Nieuw blok"
 

@@ -18,6 +18,7 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 		$show_funding_goal     = empty( $instance['show_funding_goal'] ) ? '' : esc_attr( $instance['show_funding_goal'] );
 		$show_raised           = empty( $instance['show_raised'] ) ? '' : esc_attr( $instance['show_raised'] );
 		$show_percentages      = empty( $instance['show_percentages'] ) ? '' : esc_attr( $instance['show_percentages'] );
+		$donation_form         = empty( $instance['donation_form'] ) ? '' : esc_attr( $instance['donation_form'] );
 
 		echo $before_widget;
 
@@ -76,17 +77,21 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 				<div class="progress">
 					<div class="bar" style="width: <?php echo $percentage . '%'; ?>;"></div>
 				</div>
-			
-			<?php endif; ?>
-			
-			<?php if ( get_option( 'pronamic_donations_gravity_forms_page_id' ) ) : ?>
 
-				<a class="button btn alt large" href="<?php echo get_permalink( get_option( 'pronamic_donations_gravity_forms_page_id' ) ); ?>/?pid=<?php echo get_the_ID(); ?>"><?php _e( 'Donate', 'pronamic_donations' ); ?></a>
-			
+			<?php endif; ?>
+
+			<?php if ( $donation_form == 'button' && get_option( 'pronamic_donations_gravity_forms_page_id' ) ) : ?>
+
+				<a class="button btn btn-primary alt large" href="<?php echo esc_url( get_permalink( get_option( 'pronamic_donations_gravity_forms_page_id' ) ) ); ?>/?pid=<?php echo get_the_ID(); ?>"><?php _e( 'Donate', 'pronamic_donations' ); ?></a>
+
 			<?php endif; ?>
 		</div>
 
 		<?php
+
+		if ( $donation_form == 'widget' && ! empty( get_option( 'pronamic_donations_gravity_form_id' ) ) ) {
+			gravity_form( get_option( 'pronamic_donations_gravity_form_id' ), false, false );
+		}
 
 		echo $after_widget; 
 	}
@@ -99,6 +104,7 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 		$instance['show_funding_goal']     = $new_instance['show_funding_goal'];
 		$instance['show_raised']           = $new_instance['show_raised'];
 		$instance['show_percentages']      = $new_instance['show_percentages'];
+		$instance['donation_form']         = $new_instance['donation_form'];
 
 		return $instance;
 	}
@@ -109,7 +115,8 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 		$show_funding_goal     = isset( $instance['show_funding_goal'] ) ? esc_attr( $instance['show_funding_goal'] ) : '';
 		$show_raised           = isset( $instance['show_raised'] ) ? esc_attr( $instance['show_raised'] ) : '';
 		$show_percentages      = isset( $instance['show_percentages'] ) ? esc_attr( $instance['show_percentages'] ) : '';
-	
+		$donation_form         = isset( $instance['donation_form'] ) ? esc_attr( $instance['donation_form'] ) : '';
+
 		?>
 
 		<p>
@@ -150,6 +157,18 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'show_percentages' ); ?>">
 				<?php _e( 'Show percentages', 'pronamic_donations' ); ?>
 			</label>
+		</p>
+
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'donation_form' ) ); ?>">
+				<?php _e( 'Donation form:', 'pronamic_donations' ); ?>
+			</label>
+
+			<select id="<?php echo esc_attr( $this->get_field_id( 'donation_form' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'donation_form' ) ); ?>">
+				<option value="default" <?php selected( $donation_form, 'default' ); ?>><?php _e( 'Show on current page', 'pronamic_donations' ); ?></option>
+				<option value="button" <?php selected( $donation_form, 'button' ); ?>><?php _e( 'Show on another page', 'pronamic_donations' ); ?></option>
+				<option value="widget" <?php selected( $donation_form, 'widget' ); ?>><?php _e( 'Show in widget', 'pronamic_donations' ); ?></option>
+			</select>
 		</p>
 		
 		<?php
