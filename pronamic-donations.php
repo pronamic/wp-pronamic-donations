@@ -25,6 +25,8 @@ if ( is_admin() ) {
 	require PRONAMIC_DONATIONS_PATH . 'includes/meta-boxes.php';
 }
 
+require PRONAMIC_DONATIONS_PATH . 'includes/shortcodes.php';
+
 /**
  * Widget includes
  */
@@ -79,6 +81,11 @@ if ( get_option( 'pronamic_donations_gravity_form_id' ) ) {
 		}
 
 		$total = 0;
+
+		echo '<pre>';
+		var_dump($entry);
+		echo '</pre>';
+		exit;
 
 		foreach( $form['fields'] as &$field ) {
 			if ( $field['type'] == 'total' ) {
