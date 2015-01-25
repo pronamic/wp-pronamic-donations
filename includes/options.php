@@ -185,6 +185,10 @@ function pronamic_donations_settings_page_render() {
 							</td>
 						</tr>
 					
+					<?php else : ?>
+
+						<?php _e( 'It looks like Gravity Forms is not active. Please activate it.', 'pronamic_donations' ); ?>
+
 					<?php endif; ?>
 				</table>
 			
