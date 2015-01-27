@@ -4,7 +4,7 @@ Plugin Name: Pronamic Donations
 Plugin URI: https://github.com/pronamic/wp-pronamic-donations/
 Description: This plugin adds some basic donation functionality to WordPress.
 
-Version: 1.0.2
+Version: 1.0.3
 Requires at least: 3.5
 
 Author: Pronamic
@@ -81,11 +81,6 @@ if ( get_option( 'pronamic_donations_gravity_form_id' ) ) {
 		}
 
 		$total = 0;
-
-		echo '<pre>';
-		var_dump($entry);
-		echo '</pre>';
-		exit;
 
 		foreach( $form['fields'] as &$field ) {
 			if ( $field['type'] == 'total' ) {

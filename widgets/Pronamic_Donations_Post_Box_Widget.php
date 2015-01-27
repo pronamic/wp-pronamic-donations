@@ -82,14 +82,16 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 
 			<?php if ( $donation_form == 'button' && get_option( 'pronamic_donations_gravity_forms_page_id' ) ) : ?>
 
-				<a class="button btn btn-primary alt large" href="<?php echo esc_url( get_permalink( get_option( 'pronamic_donations_gravity_forms_page_id' ) ) ); ?>/?pid=<?php echo get_the_ID(); ?>"><?php _e( 'Donate', 'pronamic_donations' ); ?></a>
+				<?php $url = add_query_arg( 'pid', get_the_ID(), get_permalink( get_option( 'pronamic_donations_gravity_forms_page_id' ) ) ); ?>
+
+				<a class="button btn btn-primary alt large" href="<?php echo esc_url( $url ); ?>"><?php _e( 'Donate', 'pronamic_donations' ); ?></a>
 
 			<?php endif; ?>
 		</div>
 
 		<?php
 
-		if ( $donation_form == 'widget' && ! empty( get_option( 'pronamic_donations_gravity_form_id' ) ) ) {
+		if ( $donation_form == 'widget' && get_option( 'pronamic_donations_gravity_form_id' ) ) {
 			gravity_form( get_option( 'pronamic_donations_gravity_form_id' ), false, false );
 		}
 
