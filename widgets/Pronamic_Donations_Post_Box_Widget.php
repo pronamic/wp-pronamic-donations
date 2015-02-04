@@ -92,7 +92,7 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 		<?php
 
 		if ( $donation_form == 'widget' && get_option( 'pronamic_donations_gravity_form_id' ) ) {
-			gravity_form( get_option( 'pronamic_donations_gravity_form_id' ), false, false );
+			gravity_form( get_option( 'pronamic_donations_gravity_form_id' ), false, false, false, array( 'pid' => get_the_ID() ) );
 		}
 
 		echo $after_widget; 
