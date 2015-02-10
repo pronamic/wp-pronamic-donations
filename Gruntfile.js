@@ -77,7 +77,7 @@ module.exports = function( grunt ) {
 		// Check textdomain errors
 		checktextdomain: {
 			options:{
-				text_domain: 'edd_vat',
+				text_domain: 'pronamic_donations',
 				keywords: [
 					'__:1,2d',
 					'_e:1,2d',

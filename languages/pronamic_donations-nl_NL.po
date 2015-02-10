@@ -1,22 +1,19 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Pronamic Framework\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-25 11:26+0100\n"
-"PO-Revision-Date: 2015-01-25 11:27+0100\n"
-"Last-Translator: K.Tolsma <kareljan@pronamic.nl>\n"
+"Project-Id-Version: Pronamic Donations\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/pronamic-"
+"donations\n"
+"POT-Creation-Date: 2015-02-10 15:25:29+00:00\n"
+"PO-Revision-Date: 2015-02-10 16:27+0100\n"
+"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;__ngettext:1,2;__withdesc;_ewithdesc;_c;"
-"_n_noop:1,2;__ngettext_noop:1,2;_x:2c,1;_nc:1,2;esc_attr_e;esc_html_e;"
-"esc_attr__;_nx:4c,1,2;_nx_noop:4c,1,2;esc_html_x:2c,1;esc_html__;_ex:2c,1\n"
-"X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.7.3\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: includes/meta-boxes.php:13
 msgid "Donation information"
@@ -34,7 +31,7 @@ msgstr "Opgehaald"
 msgid "Number donations"
 msgstr "Aantal donaties"
 
-#: includes/options.php:9 includes/options.php:10 includes/options.php:41
+#. Plugin Name of the plugin/theme
 msgid "Pronamic Donations"
 msgstr "Pronamic Donations"
 
@@ -124,8 +121,8 @@ msgstr "tot nu toe opgehaald"
 msgid "funded"
 msgstr "opgehaald"
 
-#: includes/shortcodes.php:62
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:85
+#: includes/shortcodes.php:64
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:87
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:84
 msgid "Donate"
 msgstr "Doneer"
@@ -143,40 +140,40 @@ msgstr "Toon een blok met specifieke post donatie informatie."
 msgid "There are no donations yet. Be the first!"
 msgstr "Er zijn nog geen donaties. Wees de eerste!"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:124
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:126
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:117
 msgid "Title"
 msgstr "Titel"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:134
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:136
 msgid "Show number donations"
 msgstr "Toon aantal donaties"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:142
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:144
 msgid "Show funding goal"
 msgstr "Toon donatie doel"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:150
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:152
 msgid "Show raised"
 msgstr "Toon opgehaald"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:158
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:160
 msgid "Show percentages"
 msgstr "Toon percentages"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:164
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:166
 msgid "Donation form:"
 msgstr "Donatie formulier:"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:168
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:170
 msgid "Show on current page"
 msgstr "Toon op huidige pagina"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:169
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:171
 msgid "Show on another page"
 msgstr "Toon op een andere pagina"
 
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:170
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:172
 msgid "Show in widget"
 msgstr "Toon in widget"
 
@@ -203,6 +200,23 @@ msgstr "Toon totaal opgehaald"
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:151
 msgid "Show total percentages"
 msgstr "Toon totale percentages"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.pronamic.eu/plugins/pronamic-donations/"
+msgstr "http://www.pronamic.eu/plugins/pronamic-donations/"
+
+#. Description of the plugin/theme
+msgid "This plugin adds some basic donation functionality to WordPress."
+msgstr ""
+"Deze plugin voegt een standaard donatie functionaliteit toe aan WordPress."
+
+#. Author of the plugin/theme
+msgid "Pronamic"
+msgstr "Pronamic"
+
+#. Author URI of the plugin/theme
+msgid "http://www.pronamic.eu/"
+msgstr "http://www.pronamic.nl/"
 
 #~ msgid "Funding"
 #~ msgstr "Donatie"
@@ -245,9 +259,6 @@ msgstr "Toon totale percentages"
 
 #~ msgid "Blocks"
 #~ msgstr "Blokken"
-
-#~ msgid "Pronamic"
-#~ msgstr "Pronamic"
 
 #~ msgid "http://pronamic.eu/"
 #~ msgstr "http://pronamic.nl/"
