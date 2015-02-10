@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Pronamic Donations\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/pronamic-"
 "donations\n"
-"POT-Creation-Date: 2015-02-10 15:25:29+00:00\n"
-"PO-Revision-Date: 2015-02-10 16:27+0100\n"
+"POT-Creation-Date: 2015-02-10 15:43:21+00:00\n"
+"PO-Revision-Date: 2015-02-10 16:43+0100\n"
 "Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
@@ -33,7 +33,11 @@ msgstr "Aantal donaties"
 
 #. Plugin Name of the plugin/theme
 msgid "Pronamic Donations"
-msgstr "Pronamic Donations"
+msgstr "Pronamic donaties"
+
+#: includes/options.php:10 widgets/Pronamic_Donations_Post_Box_Widget.php:8
+msgid "Donations"
+msgstr "Donaties"
 
 #: includes/options.php:47 includes/options.php:57
 msgid "Fundings"
@@ -126,10 +130,6 @@ msgstr "opgehaald"
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:84
 msgid "Donate"
 msgstr "Doneer"
-
-#: widgets/Pronamic_Donations_Post_Box_Widget.php:8
-msgid "Donations"
-msgstr "Donaties"
 
 #: widgets/Pronamic_Donations_Post_Box_Widget.php:8
 msgid "Displays a box with specific post donation information."

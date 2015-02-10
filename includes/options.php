@@ -7,7 +7,7 @@ function pronamic_donations_admin_menu() {
 	add_submenu_page(
 		'options-general.php',
 		__( 'Pronamic Donations', 'pronamic_donations' ),
-		__( 'Pronamic Donations', 'pronamic_donations' ),
+		__( 'Donations', 'pronamic_donations' ),
 		'edit_theme_options',
 		'pronamic_donations_settings',
 		'pronamic_donations_settings_page_render'
