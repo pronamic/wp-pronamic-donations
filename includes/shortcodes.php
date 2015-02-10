@@ -21,7 +21,7 @@ function pronamic_donations_donation_shortcode( $atts, $content = null ) {
 	ob_start(); ?>
 
 	<div class="donations">
-		<?php if ( get_post_meta( $atts['id'], '_pronamic_donations_number', true ) && $atts['number'] == 'true' ) : ?>
+		<?php if ( get_post_meta( $atts['id'], '_pronamic_donations_number', true ) && 'true' == $atts['number'] ) : ?>
 
 			<div class="donate-section">
 				<span class="value"><?php echo esc_html( get_post_meta( $atts['id'], '_pronamic_donations_number', true ) ); ?></span> <span class="label"><?php _e( 'donations', 'pronamic_donations' ); ?></span>
@@ -29,7 +29,7 @@ function pronamic_donations_donation_shortcode( $atts, $content = null ) {
 
 		<?php endif; ?>
 		
-		<?php if ( get_post_meta( $atts['id'], '_pronamic_donations_funding_goal', true ) && $atts['goal'] == 'true' ) : ?>
+		<?php if ( get_post_meta( $atts['id'], '_pronamic_donations_funding_goal', true ) && 'true' == $atts['goal'] ) : ?>
 
 			<div class="donate-section">
 				<span class="value"><?php echo esc_html( '&euro;' . number_format( get_post_meta( $atts['id'], '_pronamic_donations_funding_goal', true ), 2, ',', '.' ) ); ?></span> <span class="label"><?php _e( 'is our goal', 'pronamic_donations' ); ?></span>
@@ -37,7 +37,7 @@ function pronamic_donations_donation_shortcode( $atts, $content = null ) {
 
 		<?php endif; ?>
 
-		<?php if ( get_post_meta( $atts['id'], '_pronamic_donations_raised', true ) && $atts['raised'] == 'true' ) : ?>
+		<?php if ( get_post_meta( $atts['id'], '_pronamic_donations_raised', true ) && 'true' == $atts['raised'] ) : ?>
 
 			<div class="donate-section">
 				<span class="value"><?php echo esc_html( '&euro;' . number_format( get_post_meta( $atts['id'], '_pronamic_donations_raised', true ), 2, ',', '.' ) ); ?></span> <span class="label"><?php _e( 'raised so far', 'pronamic_donations' ); ?></span>
@@ -45,7 +45,7 @@ function pronamic_donations_donation_shortcode( $atts, $content = null ) {
 
 		<?php endif; ?>
 
-		<?php if ( isset( $percentage ) && $atts['percentage'] == 'true' ) : ?>
+		<?php if ( isset( $percentage ) && 'true' == $atts['percentage'] ) : ?>
 
 			<div class="donate-section">
 				<span class="value"><?php echo esc_html( $percentage . '%' ); ?></span> <span class="label"><?php _e( 'funded', 'pronamic_donations' ); ?></span>
@@ -57,7 +57,7 @@ function pronamic_donations_donation_shortcode( $atts, $content = null ) {
 
 		<?php endif; ?>
 
-		<?php if ( get_option( 'pronamic_donations_gravity_forms_page_id' ) && $atts['form'] == 'true' ) : ?>
+		<?php if ( get_option( 'pronamic_donations_gravity_forms_page_id' ) && 'true' == $atts['form'] ) : ?>
 
 			<?php $url = add_query_arg( 'pid', get_the_ID(), get_permalink( get_option( 'pronamic_donations_gravity_forms_page_id' ) ) ); ?>
 
