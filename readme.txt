@@ -23,6 +23,9 @@ Upload the Pronamic Donations folder to your wp-content/plugins folder.
 
 == Changelog ==
 
+= 1.1.0 =
+*	Only update donation totals after payment is completed.
+
 = 1.0.3 =
 *	Form integration & donation shortcode.
 
