@@ -70,42 +70,49 @@ add_action( 'wp_enqueue_scripts', 'pronamic_donations_load_scripts' );
 if ( get_option( 'pronamic_donations_gravity_form_id' ) ) {
 
 	function update_donation_information( $entry, $form ) {
-		$pid = filter_input( INPUT_GET, 'pid', FILTER_SANITIZE_NUMBER_INT );
+		$post_id = filter_input( INPUT_GET, 'pid', FILTER_SANITIZE_NUMBER_INT );
 
-		if ( isset( $pid ) ) {
-			$donate_id = $pid;
-		} else {
-			// $donate_id = $entry['post_id'];
-
-			$donate_id = get_the_ID();
+		if ( empty( $post_id ) ) {
+			$post_id = get_the_ID();
 		}
 
-		$total = 0;
-
-		foreach( $form['fields'] as &$field ) {
-			if ( $field['type'] == 'total' ) {
-				$total += $entry[$field['id']];
-			}
-		}
-
-		$raised       = get_post_meta( $donate_id, '_pronamic_donations_raised', true );
-		$number       = get_post_meta( $donate_id, '_pronamic_donations_number', true );
-		$total_raised = get_option( 'pronamic_donations_total_raised' );
-		$total_number = get_option( 'pronamic_donations_total_number' );
-		
-		$raised += $total;
-		$number = $number + 1;
-		$total_raised += $total;
-		$total_number = $total_number + 1;
-		
-		update_post_meta( $donate_id, '_pronamic_donations_raised', $raised );
-		update_post_meta( $donate_id, '_pronamic_donations_number', $number );
-		update_option( 'pronamic_donations_total_raised', $total_raised );
-		update_option( 'pronamic_donations_total_number', $total_number );
+		gform_update_meta( $entry['id'], 'pronamic_donations_post_id', $post_id );
 	}
 
 	add_action( 'gform_after_submission_' . get_option( 'pronamic_donations_gravity_form_id' ), 'update_donation_information', 10, 2 );
 }
+
+function pronamic_donations_gform_post_payment_completed( $entry, $action ) {
+	if ( isset( $action['amount'] ) ) {
+		$amount = $action['amount'];
+
+		// Totals
+		$total_raised = get_option( 'pronamic_donations_total_raised' );
+		$total_number = get_option( 'pronamic_donations_total_number' );
+
+		$total_raised += $amount;
+		$total_number += 1;
+
+		update_option( 'pronamic_donations_total_raised', $total_raised );
+		update_option( 'pronamic_donations_total_number', $total_number );
+
+		// Per post
+		$post_id = gform_get_meta( $entry['id'], 'pronamic_donations_post_id' );
+
+		if ( ! empty( $post_id ) ) {
+			$raised = get_post_meta( $post_id, '_pronamic_donations_raised', true );
+			$number = get_post_meta( $post_id, '_pronamic_donations_number', true );
+
+			$raised += $amount;
+			$number += 1;
+
+			update_post_meta( $post_id, '_pronamic_donations_raised', $raised );
+			update_post_meta( $post_id, '_pronamic_donations_number', $number );
+		}
+	}
+}
+
+add_action( 'gform_post_payment_completed', 'pronamic_donations_gform_post_payment_completed', 10, 2 );
 
 /**
  * Template functions
