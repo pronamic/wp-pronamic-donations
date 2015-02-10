@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Show total donations
@@ -88,7 +88,7 @@ class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
 
 		<?php
 
-		echo $after_widget; 
+		echo $after_widget;
 	}
 
 	function update( $new_instance, $old_instance ) {

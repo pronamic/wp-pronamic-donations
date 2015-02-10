@@ -37,7 +37,7 @@ require PRONAMIC_DONATIONS_PATH . 'widgets/Pronamic_Donations_Post_Box_Widget.ph
  * Init
  */
 function pronamic_donations_init() {
-  	load_plugin_textdomain( 'pronamic_donations', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'pronamic_donations', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
 add_action( 'plugins_loaded', 'pronamic_donations_init' );
@@ -56,7 +56,7 @@ add_action( 'widgets_init', 'pronamic_donations_wp_widgets', 1 );
  * Enqueue scripts & styles
  */
 function pronamic_donations_load_scripts() {
-	wp_enqueue_style( 
+	wp_enqueue_style(
 		'pronamic-donations',
 		plugins_url( '/css/pronamic-donations.css' , __FILE__ )
 	);
@@ -120,8 +120,8 @@ add_action( 'gform_post_payment_completed', 'pronamic_donations_gform_post_payme
 function pronamic_donations_get_total_raised() {
 	return get_option( 'pronamic_donations_total_raised' );
 }
- 
+
 function pronamic_donations_get_total_number() {
 	return get_option( 'pronamic_donations_total_number' );
 }
- 
+	

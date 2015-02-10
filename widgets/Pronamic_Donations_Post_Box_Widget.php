@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Show donations
@@ -95,7 +95,7 @@ class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
 			gravity_form( get_option( 'pronamic_donations_gravity_form_id' ), false, false, false, array( 'pid' => get_the_ID() ) );
 		}
 
-		echo $after_widget; 
+		echo $after_widget;
 	}
 
 	function update( $new_instance, $old_instance ) {

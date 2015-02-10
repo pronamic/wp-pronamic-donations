@@ -105,8 +105,8 @@ function pronamic_donations_settings_page_render() {
 				$post_types = get_post_types( array(
 						'public' => true
 					),
-					'objects' 
-				); 
+					'objects'
+				);
 
 				?>
 
@@ -117,11 +117,11 @@ function pronamic_donations_settings_page_render() {
 						</th>
 						<td>
 							<?php
-							
+
 							$active = get_option( 'pronamic_donations_post_types' );
-							
+
 							$active = is_array( $active ) ? $active : array();
-	
+
 							foreach ( $post_types as $key => $post_type ) : ?>
 					
 								<div>
@@ -145,11 +145,11 @@ function pronamic_donations_settings_page_render() {
 						<td>
 							<?php
 
-							wp_dropdown_pages( array( 
-								'name'             => 'pronamic_donations_gravity_forms_page_id', 
-								'selected'         => get_option( 'pronamic_donations_gravity_forms_page_id' ),  
-								'show_option_none' => __( '&mdash; Select a page &mdash;', 'pronamic_donations' ) 
-							) ); 
+							wp_dropdown_pages( array(
+								'name'             => 'pronamic_donations_gravity_forms_page_id',
+								'selected'         => get_option( 'pronamic_donations_gravity_forms_page_id' ),
+								'show_option_none' => __( '&mdash; Select a page &mdash;', 'pronamic_donations' )
+							) );
 
 							?>
 							
@@ -159,7 +159,7 @@ function pronamic_donations_settings_page_render() {
 						</td>
 					</tr>
 
-					<?php 
+					<?php
 
 					if ( class_exists( 'RGFormsModel' ) ) :
 						$forms = RGFormsModel::get_forms();

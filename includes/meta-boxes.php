@@ -5,10 +5,10 @@
  */
 function pronamic_donations_add_meta_boxes() {
 	$post_types = get_option( 'pronamic_donations_post_types' );
-	
-	if ( $post_types ) { 
+
+	if ( $post_types ) {
 		foreach ( $post_types as $post_type ) {
-			add_meta_box(  
+			add_meta_box(
 				'pronamic_donations',
 				__( 'Donation information', 'pronamic_donations' ),
 				'pronamic_donations_box',
@@ -75,8 +75,8 @@ function pronamic_save_donations( $post_id ) {
 	global $post;
 
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-    	return;
-    }
+		return;
+	}
 
 	if ( ! isset( $_POST['pronamic_donations_box_nonce'] ) || ! wp_verify_nonce( $_POST['pronamic_donations_box_nonce'], 'pronamic_save_donations_box_nonce' ) ) {
 		return;
@@ -87,7 +87,7 @@ function pronamic_save_donations( $post_id ) {
 	}
 
 	// Save data
-	$data = filter_input_array( INPUT_POST, array( 
+	$data = filter_input_array( INPUT_POST, array(
 		'_pronamic_donations_funding_goal' => FILTER_SANITIZE_STRING,
 		'_pronamic_donations_raised'       => FILTER_SANITIZE_STRING,
 		'_pronamic_donations_number'       => FILTER_SANITIZE_STRING,
