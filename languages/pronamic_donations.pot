@@ -1,0 +1,210 @@
+# Copyright (C) 2015 Pronamic
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Pronamic Donations 1.1.0\n"
+"Report-Msgid-Bugs-To: "
+"http://wordpress.org/support/plugin/pronamic-donations\n"
+"POT-Creation-Date: 2015-02-10 15:43:21+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: includes/meta-boxes.php:13
+msgid "Donation information"
+msgstr ""
+
+#: includes/meta-boxes.php:38
+msgid "Funding goal"
+msgstr ""
+
+#: includes/meta-boxes.php:48
+msgid "Raised"
+msgstr ""
+
+#: includes/meta-boxes.php:58
+msgid "Number donations"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Pronamic Donations"
+msgstr ""
+
+#: includes/options.php:10 widgets/Pronamic_Donations_Post_Box_Widget.php:8
+msgid "Donations"
+msgstr ""
+
+#: includes/options.php:47 includes/options.php:57
+msgid "Fundings"
+msgstr ""
+
+#: includes/options.php:48
+msgid "Settings"
+msgstr ""
+
+#: includes/options.php:63
+msgid "Total funding goal"
+msgstr ""
+
+#: includes/options.php:71
+msgid "Total raised"
+msgstr ""
+
+#: includes/options.php:77 includes/options.php:89
+msgid "This field is automatically updated."
+msgstr ""
+
+#: includes/options.php:83
+msgid "Total number donations"
+msgstr ""
+
+#: includes/options.php:100
+msgid "Post Types"
+msgstr ""
+
+#: includes/options.php:116
+msgid "Post types"
+msgstr ""
+
+#: includes/options.php:137
+msgid "Gravity Forms"
+msgstr ""
+
+#: includes/options.php:143
+msgid "Gravity Forms Page"
+msgstr ""
+
+#: includes/options.php:151
+msgid "&mdash; Select a page &mdash;"
+msgstr ""
+
+#: includes/options.php:157
+msgid "Only use this setting if you want the Gravity Form on another page."
+msgstr ""
+
+#: includes/options.php:171
+msgid "Gravity Forms Form"
+msgstr ""
+
+#: includes/options.php:175
+msgid "&mdash; Select a form &mdash;"
+msgstr ""
+
+#: includes/options.php:190
+msgid "It looks like Gravity Forms is not active. Please activate it."
+msgstr ""
+
+#: includes/shortcodes.php:27 widgets/Pronamic_Donations_Post_Box_Widget.php:42
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:41
+msgid "donations"
+msgstr ""
+
+#: includes/shortcodes.php:35 widgets/Pronamic_Donations_Post_Box_Widget.php:58
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:57
+msgid "is our goal"
+msgstr ""
+
+#: includes/shortcodes.php:43 widgets/Pronamic_Donations_Post_Box_Widget.php:66
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:65
+msgid "raised so far"
+msgstr ""
+
+#: includes/shortcodes.php:51 widgets/Pronamic_Donations_Post_Box_Widget.php:74
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:73
+msgid "funded"
+msgstr ""
+
+#: includes/shortcodes.php:64 widgets/Pronamic_Donations_Post_Box_Widget.php:87
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:84
+msgid "Donate"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:8
+msgid "Displays a box with specific post donation information."
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:48
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:47
+msgid "There are no donations yet. Be the first!"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:126
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:117
+msgid "Title"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:136
+msgid "Show number donations"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:144
+msgid "Show funding goal"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:152
+msgid "Show raised"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:160
+msgid "Show percentages"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:166
+msgid "Donation form:"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:170
+msgid "Show on current page"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:171
+msgid "Show on another page"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Post_Box_Widget.php:172
+msgid "Show in widget"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:8
+msgid "Total donations"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:8
+msgid "Displays a box with total donation information."
+msgstr ""
+
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:127
+msgid "Show total number donations"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:135
+msgid "Show total funding goal"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:143
+msgid "Show total raised"
+msgstr ""
+
+#: widgets/Pronamic_Donations_Total_Box_Widget.php:151
+msgid "Show total percentages"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.pronamic.eu/plugins/pronamic-donations/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin adds some basic donation functionality to WordPress."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Pronamic"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.pronamic.eu/"
+msgstr ""

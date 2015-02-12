@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Show total donations
@@ -81,14 +81,14 @@ class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
 
 			<?php if ( get_option( 'pronamic_donations_gravity_forms_page_id' ) ) : ?>
 
-				<a class="button btn alt large" href="<?php echo get_permalink( get_option( 'pronamic_donations_gravity_forms_page_id' ) ); ?>/?pid=<?php echo get_the_ID(); ?>"><?php _e( 'Donate', 'pronamic_donations' ); ?></a>
+				<a class="button btn btn-primary alt large" href="<?php echo get_permalink( get_option( 'pronamic_donations_gravity_forms_page_id' ) ); ?>/?pid=<?php echo get_the_ID(); ?>"><?php _e( 'Donate', 'pronamic_donations' ); ?></a>
 			
 			<?php endif; ?>
 		</div>
 
 		<?php
 
-		echo $after_widget; 
+		echo $after_widget;
 	}
 
 	function update( $new_instance, $old_instance ) {
