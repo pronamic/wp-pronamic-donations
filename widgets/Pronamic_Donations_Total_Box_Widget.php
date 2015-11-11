@@ -25,7 +25,7 @@ class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
 			echo $before_title . $title . $after_title;
 		}
 
-		if ( get_option( 'pronamic_donations_total_raised' ) && get_option( 'pronamic_donations_total_funding_goal' ) ) {
+		if ( get_option( 'pronamic_donations_total_raised' ) !== '' && get_option( 'pronamic_donations_total_funding_goal' ) ) {
 			$percentage = ( get_option( 'pronamic_donations_total_raised' ) * 100 ) / get_option( 'pronamic_donations_total_funding_goal' );
 			$percentage = round( $percentage, 2 );
 		}
@@ -59,7 +59,7 @@ class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
 			
 			<?php endif; ?>
 
-			<?php if ( $show_total_raised && get_option( 'pronamic_donations_total_raised' ) ) : ?>
+			<?php if ( $show_total_raised && get_option( 'pronamic_donations_total_raised' ) !== '' ) : ?>
 
 				<div class="donate-section">
 					<span class="value"><?php echo '&euro;' . number_format( get_option( 'pronamic_donations_total_raised' ), 2, ',', '.' ); ?></span> <span class="label"><?php _e( 'raised so far', 'pronamic_donations' ); ?></span>
