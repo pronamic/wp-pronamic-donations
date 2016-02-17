@@ -82,7 +82,7 @@ function pronamic_save_donations( $post_id ) {
 		return;
 	}
 
-	if ( ! current_user_can( 'edit_post' ) ) {
+	if ( ! current_user_can( 'edit_posts' ) ) {
 		return;
 	}
 
