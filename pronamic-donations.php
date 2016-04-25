@@ -86,6 +86,12 @@ if ( get_option( 'pronamic_donations_gravity_form_id' ) ) {
 }
 
 function pronamic_donations_gform_post_payment_completed( $entry, $action ) {
+	$form_id = get_option( 'pronamic_donations_gravity_form_id' );
+
+	if ( $form_id && $form_id !== $entry['form_id'] ) {
+		return;
+	}
+
 	if ( isset( $action['amount'] ) ) {
 		$amount = $action['amount'];
 
