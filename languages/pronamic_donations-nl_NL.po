@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: Pronamic Donations\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/pronamic-"
 "donations\n"
-"POT-Creation-Date: 2015-02-10 15:43:21+00:00\n"
-"PO-Revision-Date: 2015-02-10 16:43+0100\n"
-"Last-Translator: Remco Tolsma <info@remcotolsma.nl>\n"
+"POT-Creation-Date: 2017-05-18 14:33:06+00:00\n"
+"PO-Revision-Date: 2017-05-18 16:33+0100\n"
+"Last-Translator: Reüel van der Steege <reuel@pronamic.nl>\n"
 "Language-Team: Pronamic <info@pronamic.nl>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr "Donatie informatie"
 
 #: includes/meta-boxes.php:38
 msgid "Funding goal"
-msgstr "Donatie doel"
+msgstr "Doelbedrag"
 
 #: includes/meta-boxes.php:48
 msgid "Raised"
@@ -33,7 +33,7 @@ msgstr "Aantal donaties"
 
 #. Plugin Name of the plugin/theme
 msgid "Pronamic Donations"
-msgstr "Pronamic donaties"
+msgstr "Pronamic Donaties"
 
 #: includes/options.php:10 widgets/Pronamic_Donations_Post_Box_Widget.php:8
 msgid "Donations"
@@ -49,7 +49,7 @@ msgstr "Instellingen"
 
 #: includes/options.php:63
 msgid "Total funding goal"
-msgstr "Totale donatie doel"
+msgstr "Totaal doelbedrag"
 
 #: includes/options.php:71
 msgid "Total raised"
@@ -57,49 +57,80 @@ msgstr "Totaal opgehaald"
 
 #: includes/options.php:77 includes/options.php:89
 msgid "This field is automatically updated."
-msgstr "Dit veld wordt automatisch geupdate."
+msgstr "Dit veld wordt automatisch bijgewerkt."
 
 #: includes/options.php:83
 msgid "Total number donations"
-msgstr "Totale aantal donaties"
+msgstr "Totaal aantal donaties"
 
-#: includes/options.php:100
+#: includes/options.php:97
+msgid "Use the 'Total donations' widget to show totals to site visitors."
+msgstr ""
+"Gebruik de 'Totale donaties' widget om de totalen aan bezoekers te tonen."
+
+#: includes/options.php:105
 msgid "Post Types"
-msgstr "Post types"
+msgstr "Berichttypes"
 
-#: includes/options.php:116
+#: includes/options.php:121
 msgid "Post types"
-msgstr "Post types"
+msgstr "Berichttypes"
 
-#: includes/options.php:137
+#: includes/options.php:139
+msgid "Enable post types to be able to set a target amount per post."
+msgstr ""
+"Schakel berichttypes in om een doelbedrag per bericht te kunnen instellen."
+
+#: includes/options.php:146
 msgid "Gravity Forms"
 msgstr "Gravity Forms"
 
-#: includes/options.php:143
+#: includes/options.php:152
 msgid "Gravity Forms Page"
 msgstr "Gravity Forms pagina"
 
-#: includes/options.php:151
+#: includes/options.php:160
 msgid "&mdash; Select a page &mdash;"
 msgstr "&mdash; Selecteer een pagina &mdash;"
 
-#: includes/options.php:157
-msgid "Only use this setting if you want the Gravity Form on another page."
+#: includes/options.php:166
+msgid ""
+"Choose a page which contains the donation form to link to from widgets and "
+"shortcode."
 msgstr ""
-"Gebruik deze instelling alleen als je het Gravity Forms formulier op aan "
-"andere pagina gebruikt."
+"Stel een pagina met het donatieformulier in om vanuit de widgets en "
+"shortcode naar te verwijzen."
 
-#: includes/options.php:171
-msgid "Gravity Forms Form"
-msgstr "Gravity Forms formulier"
+#: includes/options.php:180
+msgid "Gravity Forms Widget Form"
+msgstr "Gravity Forms widget formulier"
 
-#: includes/options.php:175
+#: includes/options.php:184
 msgid "&mdash; Select a form &mdash;"
 msgstr "&mdash; Selecteer een formulier &mdash;"
 
-#: includes/options.php:190
+#: includes/options.php:196
+msgid ""
+"Choose a form to embed in the 'Donations' widget, if set to 'Show in widget'."
+msgstr ""
+"Kies een formulier om in de 'Donaties' widget in te sluiten, indien "
+"ingesteld op 'Toon in widget'."
+
+#: includes/options.php:203 includes/options.php:246
 msgid "It looks like Gravity Forms is not active. Please activate it."
-msgstr "Het lijkt erop dat Gravity Forms niet geactiveerd is. Activeer het."
+msgstr ""
+"Het lijkt erop dat Gravity Forms niet geactiveerd is. Activeer eerst de "
+"plugin."
+
+#: includes/options.php:216
+msgid "Gravity Forms forms"
+msgstr "Gravity Forms formulieren"
+
+#: includes/options.php:239
+msgid "Enable forms to process payments for form entries as donations."
+msgstr ""
+"Schakel formulieren in om betalingen voor formulier inzendingen als donaties "
+"te verwerken."
 
 #: includes/shortcodes.php:27
 #: widgets/Pronamic_Donations_Post_Box_Widget.php:42
@@ -151,7 +182,7 @@ msgstr "Toon aantal donaties"
 
 #: widgets/Pronamic_Donations_Post_Box_Widget.php:144
 msgid "Show funding goal"
-msgstr "Toon donatie doel"
+msgstr "Toon doelbedrag"
 
 #: widgets/Pronamic_Donations_Post_Box_Widget.php:152
 msgid "Show raised"
@@ -163,7 +194,7 @@ msgstr "Toon percentages"
 
 #: widgets/Pronamic_Donations_Post_Box_Widget.php:166
 msgid "Donation form:"
-msgstr "Donatie formulier:"
+msgstr "Donatieformulier:"
 
 #: widgets/Pronamic_Donations_Post_Box_Widget.php:170
 msgid "Show on current page"
@@ -171,7 +202,7 @@ msgstr "Toon op huidige pagina"
 
 #: widgets/Pronamic_Donations_Post_Box_Widget.php:171
 msgid "Show on another page"
-msgstr "Toon op een andere pagina"
+msgstr "Toon op andere pagina"
 
 #: widgets/Pronamic_Donations_Post_Box_Widget.php:172
 msgid "Show in widget"
@@ -187,11 +218,11 @@ msgstr "Toont een blok met totale donatie informatie."
 
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:127
 msgid "Show total number donations"
-msgstr "Toon totale aantal donaties"
+msgstr "Toon totaal aantal donaties"
 
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:135
 msgid "Show total funding goal"
-msgstr "Toon totale donatie doel"
+msgstr "Toon totaal doelbedrag"
 
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:143
 msgid "Show total raised"
@@ -199,7 +230,7 @@ msgstr "Toon totaal opgehaald"
 
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:151
 msgid "Show total percentages"
-msgstr "Toon totale percentages"
+msgstr "Toon totaal percentages"
 
 #. Plugin URI of the plugin/theme
 msgid "http://www.pronamic.eu/plugins/pronamic-donations/"
@@ -217,6 +248,11 @@ msgstr "Pronamic"
 #. Author URI of the plugin/theme
 msgid "http://www.pronamic.eu/"
 msgstr "http://www.pronamic.nl/"
+
+#~ msgid "Only use this setting if you want the Gravity Form on another page."
+#~ msgstr ""
+#~ "Stel een pagina met het donatieformulier in om vanuit de widgets en "
+#~ "shortcode naar te verwijzen."
 
 #~ msgid "Funding"
 #~ msgstr "Donatie"

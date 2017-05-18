@@ -1,15 +1,15 @@
-# Copyright (C) 2015 Pronamic
+# Copyright (C) 2017 Pronamic
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
 "Project-Id-Version: Pronamic Donations 1.1.0\n"
 "Report-Msgid-Bugs-To: "
 "http://wordpress.org/support/plugin/pronamic-donations\n"
-"POT-Creation-Date: 2015-02-10 15:43:21+00:00\n"
+"POT-Creation-Date: 2017-05-18 14:33:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
@@ -62,40 +62,64 @@ msgstr ""
 msgid "Total number donations"
 msgstr ""
 
-#: includes/options.php:100
+#: includes/options.php:97
+msgid "Use the 'Total donations' widget to show totals to site visitors."
+msgstr ""
+
+#: includes/options.php:105
 msgid "Post Types"
 msgstr ""
 
-#: includes/options.php:116
+#: includes/options.php:121
 msgid "Post types"
 msgstr ""
 
-#: includes/options.php:137
+#: includes/options.php:139
+msgid "Enable post types to be able to set a target amount per post."
+msgstr ""
+
+#: includes/options.php:146
 msgid "Gravity Forms"
 msgstr ""
 
-#: includes/options.php:143
+#: includes/options.php:152
 msgid "Gravity Forms Page"
 msgstr ""
 
-#: includes/options.php:151
+#: includes/options.php:160
 msgid "&mdash; Select a page &mdash;"
 msgstr ""
 
-#: includes/options.php:157
-msgid "Only use this setting if you want the Gravity Form on another page."
+#: includes/options.php:166
+msgid ""
+"Choose a page which contains the donation form to link to from widgets and "
+"shortcode."
 msgstr ""
 
-#: includes/options.php:171
-msgid "Gravity Forms Form"
+#: includes/options.php:180
+msgid "Gravity Forms Widget Form"
 msgstr ""
 
-#: includes/options.php:175
+#: includes/options.php:184
 msgid "&mdash; Select a form &mdash;"
 msgstr ""
 
-#: includes/options.php:190
+#: includes/options.php:196
+msgid ""
+"Choose a form to embed in the 'Donations' widget, if set to 'Show in "
+"widget'."
+msgstr ""
+
+#: includes/options.php:203 includes/options.php:246
 msgid "It looks like Gravity Forms is not active. Please activate it."
+msgstr ""
+
+#: includes/options.php:216
+msgid "Gravity Forms forms"
+msgstr ""
+
+#: includes/options.php:239
+msgid "Enable forms to process payments for form entries as donations."
 msgstr ""
 
 #: includes/shortcodes.php:27 widgets/Pronamic_Donations_Post_Box_Widget.php:42
