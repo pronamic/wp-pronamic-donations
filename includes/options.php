@@ -91,7 +91,12 @@ function pronamic_donations_settings_page_render() {
 						</td>
 					</tr>
 				</table>
-			
+
+				<p>
+					<span class="dashicons dashicons-info"></span>
+					<?php _e( "Use the 'Total donations' widget to show totals to site visitors.", 'pronamic_donations' ); ?>
+				</p>
+
 			<?php else : ?>
 				
 				<?php settings_fields( 'pronamic_settings_options' ); ?>
@@ -99,7 +104,7 @@ function pronamic_donations_settings_page_render() {
 				<h3>
 					<?php _e( 'Post Types', 'pronamic_donations' ); ?>
 				</h3>
-				
+
 				<?php
 
 				$post_types = get_post_types( array(
@@ -129,6 +134,10 @@ function pronamic_donations_settings_page_render() {
 								</div>
 							
 							<?php endforeach; ?>
+
+							<p class="description">
+								<?php _e( 'Enable post types to be able to set a target amount per post.', 'pronamic_donations' ); ?>
+							</p>
 						</td>
 					</tr>
 				</table>
@@ -154,7 +163,7 @@ function pronamic_donations_settings_page_render() {
 							?>
 							
 							<p class="description">
-								<?php _e( 'Only use this setting if you want the Gravity Form on another page.', 'pronamic_donations' ); ?>
+								<?php _e( 'Choose a page which contains the donation form to link to from widgets and shortcode.', 'pronamic_donations' ); ?>
 							</p>
 						</td>
 					</tr>
@@ -168,7 +177,7 @@ function pronamic_donations_settings_page_render() {
 
 						<tr valign="top">
 							<th scope="row">
-								<label for="pronamic_donations_gravity_form_id"><?php _e( 'Gravity Forms Form', 'pronamic_donations' ); ?></label>
+								<label for="pronamic_donations_gravity_form_id"><?php _e( 'Gravity Forms Widget Form', 'pronamic_donations' ); ?></label>
 							</th>
 							<td>
 								<select name="pronamic_donations_gravity_form_id" id="pronamic_donations_gravity_form_id">
@@ -182,6 +191,53 @@ function pronamic_donations_settings_page_render() {
 										
 									<?php endforeach; ?>
 								</select>
+							
+								<p class="description">
+									<?php _e( "Choose a form to embed in the 'Donations' widget, if set to 'Show in widget'.", 'pronamic_donations' ); ?>
+								</p>
+							</td>
+						</tr>
+					
+					<?php else : ?>
+
+						<?php _e( 'It looks like Gravity Forms is not active. Please activate it.', 'pronamic_donations' ); ?>
+
+					<?php endif; ?>
+
+					<?php
+
+					if ( class_exists( 'RGFormsModel' ) ) :
+						$forms = RGFormsModel::get_forms();
+
+						?>
+
+						<tr valign="top">
+							<th scope="row">
+								<label for="pronamic_donations_gravity_form_ids"><?php _e( 'Gravity Forms forms', 'pronamic_donations' ); ?></label>
+							</th>
+							<td>
+								<?php
+
+								$active = get_option( 'pronamic_donations_gravity_form_ids' );
+
+								$active = is_array( $active ) ? $active : array();
+
+								?>
+
+								<?php foreach ( $forms as $form ) : ?>
+
+									<div>
+										<label for="pronamic_donations_gravity_form_ids_<?php echo esc_attr( $form->id ); ?>">
+											<input type="checkbox" name="pronamic_donations_gravity_form_ids[]" id="pronamic_donations_gravity_form_ids_<?php echo esc_attr( $form->id ); ?>" value="<?php echo esc_attr( $form->id ); ?>" <?php checked( in_array( $form->id, $active ) ); ?>>
+											<?php echo esc_html( $form->title ); ?>
+										</label>
+									</div>
+
+								<?php endforeach; ?>
+
+								<p>
+									<?php _e( 'Enable forms to process payments for form entries as donations.', 'pronamic_donations' ); ?>
+								</p>
 							</td>
 						</tr>
 					
