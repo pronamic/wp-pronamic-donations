@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Pronamic Donations 1.1.0\n"
 "Report-Msgid-Bugs-To: "
 "http://wordpress.org/support/plugin/pronamic-donations\n"
-"POT-Creation-Date: 2017-05-18 14:33:06+00:00\n"
+"POT-Creation-Date: 2017-09-29 12:39:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,111 +38,113 @@ msgstr ""
 msgid "Donations"
 msgstr ""
 
-#: includes/options.php:47 includes/options.php:57
+#: includes/options.php:48 includes/options.php:58
 msgid "Fundings"
 msgstr ""
 
-#: includes/options.php:48
+#: includes/options.php:49
 msgid "Settings"
 msgstr ""
 
-#: includes/options.php:63
+#: includes/options.php:64
 msgid "Total funding goal"
 msgstr ""
 
-#: includes/options.php:71
+#: includes/options.php:72
 msgid "Total raised"
 msgstr ""
 
-#: includes/options.php:77 includes/options.php:89
+#: includes/options.php:78 includes/options.php:90
 msgid "This field is automatically updated."
 msgstr ""
 
-#: includes/options.php:83
+#: includes/options.php:84
 msgid "Total number donations"
 msgstr ""
 
-#: includes/options.php:97
-msgid "Use the 'Total donations' widget to show totals to site visitors."
+#: includes/options.php:101
+msgid ""
+"Use the 'Total donations' widget or shortcode %s to show totals to site "
+"visitors."
 msgstr ""
 
-#: includes/options.php:105
+#: includes/options.php:113
 msgid "Post Types"
 msgstr ""
 
-#: includes/options.php:121
+#: includes/options.php:129
 msgid "Post types"
 msgstr ""
 
-#: includes/options.php:139
+#: includes/options.php:147
 msgid "Enable post types to be able to set a target amount per post."
 msgstr ""
 
-#: includes/options.php:146
+#: includes/options.php:154
 msgid "Gravity Forms"
 msgstr ""
 
-#: includes/options.php:152
+#: includes/options.php:160
 msgid "Gravity Forms Page"
 msgstr ""
 
-#: includes/options.php:160
+#: includes/options.php:168
 msgid "&mdash; Select a page &mdash;"
 msgstr ""
 
-#: includes/options.php:166
+#: includes/options.php:174
 msgid ""
 "Choose a page which contains the donation form to link to from widgets and "
 "shortcode."
 msgstr ""
 
-#: includes/options.php:180
+#: includes/options.php:188
 msgid "Gravity Forms Widget Form"
 msgstr ""
 
-#: includes/options.php:184
+#: includes/options.php:192
 msgid "&mdash; Select a form &mdash;"
 msgstr ""
 
-#: includes/options.php:196
+#: includes/options.php:204
 msgid ""
 "Choose a form to embed in the 'Donations' widget, if set to 'Show in "
 "widget'."
 msgstr ""
 
-#: includes/options.php:203 includes/options.php:246
+#: includes/options.php:211 includes/options.php:254
 msgid "It looks like Gravity Forms is not active. Please activate it."
 msgstr ""
 
-#: includes/options.php:216
+#: includes/options.php:224
 msgid "Gravity Forms forms"
 msgstr ""
 
-#: includes/options.php:239
+#: includes/options.php:247
 msgid "Enable forms to process payments for form entries as donations."
 msgstr ""
 
-#: includes/shortcodes.php:27 widgets/Pronamic_Donations_Post_Box_Widget.php:42
+#: includes/shortcodes.php:40 widgets/Pronamic_Donations_Post_Box_Widget.php:42
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:41
 msgid "donations"
 msgstr ""
 
-#: includes/shortcodes.php:35 widgets/Pronamic_Donations_Post_Box_Widget.php:58
+#: includes/shortcodes.php:48 widgets/Pronamic_Donations_Post_Box_Widget.php:58
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:57
 msgid "is our goal"
 msgstr ""
 
-#: includes/shortcodes.php:43 widgets/Pronamic_Donations_Post_Box_Widget.php:66
+#: includes/shortcodes.php:56 widgets/Pronamic_Donations_Post_Box_Widget.php:66
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:65
 msgid "raised so far"
 msgstr ""
 
-#: includes/shortcodes.php:51 widgets/Pronamic_Donations_Post_Box_Widget.php:74
+#: includes/shortcodes.php:64 widgets/Pronamic_Donations_Post_Box_Widget.php:74
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:73
 msgid "funded"
 msgstr ""
 
-#: includes/shortcodes.php:64 widgets/Pronamic_Donations_Post_Box_Widget.php:87
+#: includes/shortcodes.php:77 widgets/Pronamic_Donations_Post_Box_Widget.php:87
 #: widgets/Pronamic_Donations_Total_Box_Widget.php:84
 msgid "Donate"
 msgstr ""
