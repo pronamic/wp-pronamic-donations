@@ -4,7 +4,7 @@
  * Show donations
  */
 class Pronamic_Donations_Post_Box_Widget extends WP_Widget {
-	function Pronamic_Donations_Post_Box_Widget() {
+	function __construct() {
 		parent::__construct( 'pronamic-donations-post-box-widget', __( 'Donations', 'pronamic_donations' ), array( 'description' => __( 'Displays a box with specific post donation information.', 'pronamic_donations' ) ) );
 	}
 

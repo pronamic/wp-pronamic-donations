@@ -4,7 +4,7 @@
  * Show total donations
  */
 class Pronamic_Donations_Total_Box_Widget extends WP_Widget {
-	function Pronamic_Donations_Total_Box_Widget() {
+	function __construct() {
 		parent::__construct( 'pronamic-donations-total-box-widget', __( 'Total donations', 'pronamic_donations' ), array( 'description' => __( 'Displays a box with total donation information.', 'pronamic_donations' ) ) );
 	}
 
