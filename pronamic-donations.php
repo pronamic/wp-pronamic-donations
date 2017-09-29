@@ -68,20 +68,38 @@ function pronamic_donations_load_scripts() {
 add_action( 'wp_enqueue_scripts', 'pronamic_donations_load_scripts' );
 
 /**
- * Gravity Forms
+ * Admin scripts
  */
-$form_ids = get_option( 'pronamic_donations_gravity_form_ids' );
+if ( is_admin() ) { // TODO: check page = 'pronamic_donations_settings'
+	function pronamic_donations_admin_scripts() {
+		wp_register_script(
+			'pronamic_donations_admin',
+			plugins_url( '/js/admin.js', __FILE__ ),
+			false,
+			'1.1.0'
+		);
 
-if ( ! $form_ids ) {
-	$form_ids = array( get_option( 'pronamic_donations_gravity_form_id' ) );
+		wp_enqueue_script( 'pronamic_donations_admin' );
+	}
+
+	add_action( 'admin_enqueue_scripts', 'pronamic_donations_admin_scripts' );
 }
 
-if ( $form_ids ) {
+/**
+ * Gravity Forms
+ */
+$pronamic_donations_form_ids = get_option( 'pronamic_donations_gravity_form_ids' );
+
+if ( ! $pronamic_donations_form_ids ) {
+	$pronamic_donations_form_ids = array( get_option( 'pronamic_donations_gravity_form_id' ) );
+}
+
+if ( $pronamic_donations_form_ids ) {
 
 	function update_donation_information( $entry, $form ) {
-		global $form_ids;
+		global $pronamic_donations_form_ids;
 
-		if ( ! in_array( $form->id, $form_ids ) ) {
+		if ( ! in_array( $form['id'], $pronamic_donations_form_ids ) ) {
 			return;
 		}
 
@@ -98,9 +116,9 @@ if ( $form_ids ) {
 }
 
 function pronamic_donations_gform_post_payment_completed( $entry, $action ) {
-	global $form_ids;
+	global $pronamic_donations_form_ids;
 
-	if ( $form_ids && ! in_array( $entry['form_id'], $form_ids ) ) {
+	if ( $pronamic_donations_form_ids && ! in_array( $entry['form_id'], $pronamic_donations_form_ids ) ) {
 		return;
 	}
 

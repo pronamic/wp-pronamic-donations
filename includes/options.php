@@ -26,6 +26,7 @@ function pronamic_donations_admin_init() {
 	register_setting( 'pronamic_settings_options', 'pronamic_donations_post_types' );
 	register_setting( 'pronamic_settings_options', 'pronamic_donations_gravity_forms_page_id' );
 	register_setting( 'pronamic_settings_options', 'pronamic_donations_gravity_form_id' );
+	register_setting( 'pronamic_settings_options', 'pronamic_donations_gravity_form_ids' );
 }
 add_action( 'admin_init', 'pronamic_donations_admin_init' );
 
@@ -56,7 +57,7 @@ function pronamic_donations_settings_page_render() {
 				<h3>
 					<?php _e( 'Fundings', 'pronamic_donations' ); ?>
 				</h3>
-	
+
 				<table class="form-table">
 					<tr valign="top">
 						<th scope="row">
@@ -94,7 +95,14 @@ function pronamic_donations_settings_page_render() {
 
 				<p>
 					<span class="dashicons dashicons-info"></span>
-					<?php _e( "Use the 'Total donations' widget to show totals to site visitors.", 'pronamic_donations' ); ?>
+					<?php
+
+					echo sprintf(
+						__( "Use the 'Total donations' widget or shortcode %s to show totals to site visitors.", 'pronamic_donations' ),
+						sprintf( '<code>%s</code>', '[donation id="total"]' )
+					);
+
+					?>
 				</p>
 
 			<?php else : ?>
@@ -235,7 +243,7 @@ function pronamic_donations_settings_page_render() {
 
 								<?php endforeach; ?>
 
-								<p>
+								<p class="description">
 									<?php _e( 'Enable forms to process payments for form entries as donations.', 'pronamic_donations' ); ?>
 								</p>
 							</td>
