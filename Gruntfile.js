@@ -32,7 +32,7 @@ module.exports = function( grunt ) {
 
 		// JSHint
 		jshint: {
-			files: ['Gruntfile.js', 'admin/js/*.js' ],
+			files: ['Gruntfile.js', '/js/**/*.js' ],
 			options: {
 				// options here to override JSHint defaults
 				globals: {
